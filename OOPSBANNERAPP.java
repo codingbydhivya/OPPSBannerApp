@@ -1,16 +1,50 @@
-public class OPPSBANNERAPP{
-public static void main(String[],args0{
-String[] lines = new String[7];
+public class OPPSBANNERAPP {
 
-        lines[0] = "   ***   " + "     " + "   ***   " + "     " + "*******  " + "     " + "   ***** ";
-        lines[1] = " **   ** " + "     " + " **   ** " + "     " + "**    ** " + "     " + " **    ";
-        lines[2] = "**     **" + "     " + "**     **" + "     " + "**    ***" + "     " + "**       ";
-        lines[3] = "**     **" + "     " + "**     **" + "     " + "**    ** " + "     " + "  *****  ";
-        lines[4] = "**     **" + "     " + "**     **" + "     " + "*******  " + "     " + "      ***";
-        lines[5] = " **   ** " + "     " + " **   ** " + "     " + "**       " + "     " + "     *** ";
-        lines[6] = "   ***  " + "     " + "    ***   " + "     " + "**       " + "     " + " ******  ";
+    static String[] getOPattern() {
+        return new String[]{
+            "   ***   ",
+            " **   ** ",
+            "**     **",
+            "**     **",
+            "**     **",
+            " **   ** ",
+            "   ***   "
+        };
+    }
 
-        for (String line : lines) {
-            System.out.println(line);}
-}}
-   
+    static String[] getPPattern() {
+        return new String[]{
+            "*******  ",
+            "**    ** ",
+            "**    ** ",
+            "*******  ",
+            "**       ",
+            "**       ",
+            "**       "
+        };
+    }
+
+    static String[] getSPattern() {
+        return new String[]{
+            " ***** ",
+            "**     ",
+            "**     ",
+            " ***** ",
+            "     **",
+            "     **",
+            " ***** "
+        };
+    }
+
+    public static void main(String[] args) {
+
+        String[] o1 = getOPattern();
+        String[] o2 = getOPattern();
+        String[] p  = getPPattern();
+        String[] s  = getSPattern();
+
+        for (int i = 0; i < o1.length; i++) {
+            System.out.println(String.join("     ", o1[i], o2[i], p[i], s[i]));
+        }
+    }
+}
